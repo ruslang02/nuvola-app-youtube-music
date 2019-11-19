@@ -81,9 +81,9 @@
     } else {
       var track = {
         title: Nuvola.queryText('.middle-controls .title'),
-        artist: Nuvola.queryText('.middle-controls .byline', value => value.split('•')[0]),
-        album: null,
-        artLocation: Nuvola.queryAttribute('.middle-controls img', 'src'),
+        artist: Nuvola.queryText('.middle-controls .byline', value => value.split('•')[0]).trim(),
+        album: Nuvola.queryText('.middle-controls .byline', value => value.split('•')[1]).trim(),
+        artLocation: Nuvola.queryAttribute('.middle-controls img', 'src').replace('w60-h60-l90', 'w256-h256-l128'),
         rating: null
       }
 
